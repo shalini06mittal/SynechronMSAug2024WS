@@ -1,21 +1,36 @@
 spring:
   application:
-     name: ConfigServerDemo
+    name: ConfigServerDemo
   cloud:
     config:
       server:
+#        native:
+#          search-locations: "file:///Users/Shalini/Desktop/SynechronMSAug2024Workshop/config"
+  #          search-locations: "classpath:/config"
         git:
           uri: https://github.com/shalini06mittal/CloudConfigRepo.git
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+          default-label: main
+          timeout: 5
+          clone-on-start: true
+          force-pull: true
+  profiles:
+    active: git
 server:
   port: 8888
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+encrypt:
+  key: "45D81EC1EF61DF9AD8D3E5BB397F9"
 
-#spring.cloud.config.server.git.uri=https://github.com/shalini06mittal/CloudConfigRepo.git
-#  spring.rabbitmq.host=localhost
-#  spring.rabbitmq.port=5672
-#  spring.rabbitmq.username=guest
-#  spring.rabbitmq.password=guest
+
+
+
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
+
