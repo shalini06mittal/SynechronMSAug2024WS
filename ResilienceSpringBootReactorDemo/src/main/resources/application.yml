@@ -1,0 +1,30 @@
+resilience4j.circuitbreaker:
+    instances:
+      example:
+        failureRateThreshold: 40
+        waitDurationInOpenState: 5s
+        permittedNumberOfCallsInHalfOpenState: 1
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 3
+        eventConsumerBufferSize: 10
+        registerHealthIndicator: true
+        slowCallRateThreshold: 40
+        maxWaitDurationInHalfOpenState: 10s
+        slowCallDurationThreshold: 2s
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+
+
+# actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - '*'
+  endpoint:
+    health:
+      show-details: always
+  health:
+    circuitbreakers:
+      enabled: true
+

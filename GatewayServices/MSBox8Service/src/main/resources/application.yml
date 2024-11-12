@@ -1,0 +1,25 @@
+
+server:
+  port: 8081
+
+spring:
+  application:
+    name: MSBOX8-SERVICE
+
+eureka:
+  client:
+    service-url:
+      defaultZone : http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - '*'
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+      sampling:
+        probability: 1.0
+

@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: GATEWAY-SERVICE
+  cloud:
+    gateway:
+      default-filters:
+      - AddResponseHeader=message, hey
+      routes:
+        - id: AUTH-SERVICE
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/auth/**
+
+        - id: RESTAURANT-SERVICE
+          uri: lb://RESTAURANT-SERVICE
+          predicates:
+            - Path=/restaurant/**
+          filters:
+            - AuthenticationFilter
+
+        - id: MSBOX8-SERVICE
+          uri: lb://MSBOX8-SERVICE
+          predicates:
+            - Path=/box8/**
+          filters:
+            - AuthenticationFilter
+
+logging:
+  level:
+    root: INFO
+  org:
+    springframework:
+      cloud:
+        gateway: TRACE
+        route:
+          RouteDefinitionRouteLocator: INFO
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - '*'
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/
+      sampling:
+        probability: 0.1

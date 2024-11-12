@@ -1,0 +1,78 @@
+spring:
+  application:
+     name: ResilienceSpringBootWebDemo
+  config:
+    import: optional:configserver:http://localhost:8888/
+  cloud:
+     config:
+        name: config-server-client, app
+  profiles:
+    active:
+      - production
+server:
+  port: 9000
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoint:
+    health:
+      show-details: ALWAYS
+  endpoints:
+    web:
+      exposure:
+        include:
+          - '*'
+
+resilience4j:
+  ratelimiter:
+    metrics:
+      enabled: true
+    instances:
+      rateLimiterApi:
+        registerHealthIndicator: true
+        limitForPeriod: 5
+        limitRefreshPeriod: 30s
+        timeoutDuration: 0s
+        allowHealthIndicatorToFail: true
+        subscribeForEvents: true
+        eventConsumerBufferSize: 50
+  timelimiter:
+    metrics:
+      enabled: true
+    instances:
+      timeLimiterApi:
+        timeoutDuration: 2s
+        cancelRunningFuture: false
+  retry:
+    instances:
+      retryApi:
+        maxAttempts: 3
+        waitDuration: 1s
+  circuitbreaker:
+    configs:
+      default:
+        registerHealthIndicator: true
+        failureRateThreshold: 50
+    instances:
+      example:
+        baseConfig: default
+        failureRateThreshold: 70
+        waitDurationInOpenState: 5s
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        permittedNumberOfCallsInHalfOpenState: 1
+        slidingWindowSize: 5
+        slidingWindowType: COUNT_BASED
+        maxWaitDurationInHalfOpenState: 6s
+        slowCallRateThreshold: 40
+        slowCallDurationThreshold: 2s
+        ignoreExceptions:
+          - java.lang.ArrayIndexOutOfBoundsException
+        ignoreExceptionPredicate: com.cb.ResilienceSpringBootWebDemo.exception.ExceptionPredicate
+
+
+
+
+
+
+

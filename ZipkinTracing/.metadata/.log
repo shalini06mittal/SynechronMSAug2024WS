@@ -1,0 +1,1440 @@
+!SESSION 2024-09-01 08:07:36.016 -----------------------------------------------
+eclipse.buildId=4.17.2.202301310704
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=cocoa, NL=en_IN
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4 -keyring /Users/Shalini/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch aarch64 -product org.springframework.boot.ide.branding.sts4 -keyring /Users/Shalini/.eclipse_keyring
+
+!ENTRY org.springframework.ide.eclipse.boot.dash.cf 4 0 2024-09-01 08:07:36.905
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.boot.dash.cf [544]
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.boot.dash.cf [osgi.identity; type="osgi.bundle"; version:Version="4.17.2.202301310704"; osgi.identity="org.springframework.ide.eclipse.boot.dash.cf"; singleton:="true"] because it is exposed to package 'org.bouncycastle.asn1' from resources org.bouncycastle.bcprov [osgi.identity; type="osgi.bundle"; version:Version="1.72.0.v20221013-1810"; osgi.identity="org.bouncycastle.bcprov"] and bcprov [osgi.identity; type="osgi.bundle"; version:Version="1.72.0"; osgi.identity="bcprov"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.boot.dash.cf [osgi.identity; type="osgi.bundle"; version:Version="4.17.2.202301310704"; osgi.identity="org.springframework.ide.eclipse.boot.dash.cf"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.bouncycastle.bcprov)(bundle-version>=1.59.0))
+     |
+    provide: osgi.wiring.bundle: org.bouncycastle.bcprov
+  org.bouncycastle.bcprov [osgi.identity; type="osgi.bundle"; version:Version="1.72.0.v20221013-1810"; osgi.identity="org.bouncycastle.bcprov"]
+
+Chain 2:
+  org.springframework.ide.eclipse.boot.dash.cf [osgi.identity; type="osgi.bundle"; version:Version="4.17.2.202301310704"; osgi.identity="org.springframework.ide.eclipse.boot.dash.cf"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.bouncycastle.bcpkix)(bundle-version>=1.59.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.72.0.v20221013-1810"; osgi.wiring.bundle="org.bouncycastle.bcpkix"
+  org.bouncycastle.bcpkix [osgi.identity; type="osgi.bundle"; version:Version="1.72.0.v20221013-1810"; osgi.identity="org.bouncycastle.bcpkix"]
+    import: (&(osgi.wiring.package=org.bouncycastle.asn1)(&(version>=1.72.0)(!(version>=1.73.0))))
+     |
+    export: osgi.wiring.package: org.bouncycastle.asn1
+  bcprov [osgi.identity; type="osgi.bundle"; version:Version="1.72.0"; osgi.identity="bcprov"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY com.yattasolutions.codegen.oaw.ui 4 0 2024-09-01 08:07:36.931
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.yattasolutions.codegen.oaw.ui [751]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtend.typesystem.uml2.ui; bundle-version="[1.0.1,2.3.0)"
+    -> Bundle-SymbolicName: org.eclipse.xtend.typesystem.uml2.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+       org.eclipse.xtend.typesystem.uml2.ui [941]
+         Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+           -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+              org.eclipse.xtend.shared.ui [937]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui; bundle-version="[1.0.1,2.3.0)"
+    -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY com.yattasolutions.xpandpp.ui 4 0 2024-09-01 08:07:36.965
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.yattasolutions.xpandpp.ui [806]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui; bundle-version="[1.0.1,2.3.0)"
+    -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+       org.eclipse.xtend.shared.ui [937]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.xpand.ui; bundle-version="[1.0.1,2.3.0)"
+    -> Bundle-SymbolicName: org.eclipse.xpand.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+       org.eclipse.xpand.ui [933]
+         Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+           -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.xtend.ui
+           -> Bundle-SymbolicName: org.eclipse.xtend.ui; bundle-version="2.2.0.v201605260315"; singleton:="true"
+              org.eclipse.xtend.ui [942]
+                Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+                  -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xpand.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xpand.ui"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xpand.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xpand.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xpand.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xpand.ui"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.xpand.ui 4 0 2024-09-01 08:07:36.982
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xpand.ui [933]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+    -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+       org.eclipse.xtend.shared.ui [937]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.xtend.ui
+    -> Bundle-SymbolicName: org.eclipse.xtend.ui; bundle-version="2.2.0.v201605260315"; singleton:="true"
+       org.eclipse.xtend.ui [942]
+         Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+           -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xpand.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xpand.ui"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xpand.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xpand.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xpand.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xpand.ui"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.xtend.check.ui 4 0 2024-09-01 08:07:36.995
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtend.check.ui [935]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+    -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+       org.eclipse.xtend.shared.ui [937]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.xtend.ui
+    -> Bundle-SymbolicName: org.eclipse.xtend.ui; bundle-version="2.2.0.v201605260315"; singleton:="true"
+       org.eclipse.xtend.ui [942]
+         Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+           -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.xtend.shared.ui 4 0 2024-09-01 08:07:37.008
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtend.shared.ui [937]
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.xtend.typesystem.emf.ui 4 0 2024-09-01 08:07:37.023
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtend.typesystem.emf.ui [939]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+    -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+       org.eclipse.xtend.shared.ui [937]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.xtend.typesystem.uml2.ui 4 0 2024-09-01 08:07:37.039
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtend.typesystem.uml2.ui [941]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+    -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+       org.eclipse.xtend.shared.ui [937]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.xtend.ui 4 0 2024-09-01 08:07:37.053
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtend.ui [942]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+    -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+       org.eclipse.xtend.shared.ui [937]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.e4.ui.css.swt.theme 4 0 2024-09-01 08:08:02.231
+!MESSAGE /css/gef_dark.css
+!STACK 0
+java.io.FileNotFoundException: /css/gef_dark.css
+	at org.eclipse.osgi.storage.url.bundleentry.Handler.findBundleEntry(Handler.java:55)
+	at org.eclipse.osgi.storage.url.BundleResourceHandler.openConnection(BundleResourceHandler.java:182)
+	at java.base/java.net.URL.openConnection(URL.java:1094)
+	at org.eclipse.osgi.storage.url.BundleURLConverter.resolve(BundleURLConverter.java:55)
+	at org.eclipse.core.runtime.FileLocator.resolve(FileLocator.java:288)
+	at org.eclipse.core.internal.runtime.PlatformURLConverter.resolve(PlatformURLConverter.java:53)
+	at org.eclipse.core.runtime.FileLocator.resolve(FileLocator.java:288)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.setTheme(ThemeEngine.java:468)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.setTheme(ThemeEngine.java:436)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.setTheme(ThemeEngine.java:428)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.restore(ThemeEngine.java:624)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.setCSSTheme(PartRenderingEngine.java:1417)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.initializeStyling(PartRenderingEngine.java:1324)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1050)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:643)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:550)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:171)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.jface 2 0 2024-09-01 08:08:02.392
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-09-01 08:08:02.393
+!MESSAGE A conflict occurred for COMMAND+SHIFT+T:
+Binding(COMMAND+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(COMMAND+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-09-01 08:08:02.393
+!MESSAGE A conflict occurred for ALT+COMMAND+R:
+Binding(ALT+COMMAND+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.ui.edit.rename"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,cocoa,system)
+Binding(ALT+COMMAND+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.edit.text.java.rename.element"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,cocoa,system)
+
+!ENTRY com.yattasolutions.platform.marketplace.client 4 0 2024-09-01 08:21:12.402
+!MESSAGE Problem retrieving marketplace UUID, an own UUID will be used.
+!STACK 0
+java.lang.RuntimeException: The plugin could not be started. Please restart Eclipse.
+	at com.yattasolutions.platform.marketplace.client.MarketplaceClientPlugin.getDefault(MarketplaceClientPlugin.java:245)
+	at com.yattasolutions.platform.marketplace.client.MarketplaceClient.get(MarketplaceClient.java:33)
+	at de.yatta.platform.marketplace.licensing.client.LicensingClient.getAccountUuid(LicensingClient.java:604)
+	at de.yatta.platform.marketplace.licensing.client.LicensingClient$1.run(LicensingClient.java:510)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2024-09-01 08:21:12.488
+!MESSAGE An internal error occurred during: "Update License for de.yatta.feature.roundtrip".
+!STACK 0
+java.lang.RuntimeException: The plugin could not be started. Please restart Eclipse.
+	at com.yattasolutions.platform.marketplace.client.MarketplaceClientPlugin.getDefault(MarketplaceClientPlugin.java:245)
+	at com.yattasolutions.platform.marketplace.client.MarketplaceClient.get(MarketplaceClient.java:33)
+	at de.yatta.platform.marketplace.licensing.client.LicensingClient.getLocalAuthorization(LicensingClient.java:393)
+	at de.yatta.platform.marketplace.licensing.client.LicensingClient.restoreOfflineLicenseAfterException(LicensingClient.java:624)
+	at de.yatta.platform.marketplace.licensing.client.LicensingClient$1.run(LicensingClient.java:588)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2024-09-01 08:35:15.639 -----------------------------------------------
+eclipse.buildId=4.17.2.202301310704
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=cocoa, NL=en_IN
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4 -keyring /Users/Shalini/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch aarch64 -product org.springframework.boot.ide.branding.sts4 -keyring /Users/Shalini/.eclipse_keyring
+
+!ENTRY org.springframework.ide.eclipse.boot.dash.cf 4 0 2024-09-01 08:35:16.581
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.boot.dash.cf [544]
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.boot.dash.cf [osgi.identity; type="osgi.bundle"; version:Version="4.17.2.202301310704"; osgi.identity="org.springframework.ide.eclipse.boot.dash.cf"; singleton:="true"] because it is exposed to package 'org.bouncycastle.asn1' from resources org.bouncycastle.bcprov [osgi.identity; type="osgi.bundle"; version:Version="1.72.0.v20221013-1810"; osgi.identity="org.bouncycastle.bcprov"] and bcprov [osgi.identity; type="osgi.bundle"; version:Version="1.72.0"; osgi.identity="bcprov"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.boot.dash.cf [osgi.identity; type="osgi.bundle"; version:Version="4.17.2.202301310704"; osgi.identity="org.springframework.ide.eclipse.boot.dash.cf"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.bouncycastle.bcprov)(bundle-version>=1.59.0))
+     |
+    provide: osgi.wiring.bundle: org.bouncycastle.bcprov
+  org.bouncycastle.bcprov [osgi.identity; type="osgi.bundle"; version:Version="1.72.0.v20221013-1810"; osgi.identity="org.bouncycastle.bcprov"]
+
+Chain 2:
+  org.springframework.ide.eclipse.boot.dash.cf [osgi.identity; type="osgi.bundle"; version:Version="4.17.2.202301310704"; osgi.identity="org.springframework.ide.eclipse.boot.dash.cf"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.bouncycastle.bcpkix)(bundle-version>=1.59.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.72.0.v20221013-1810"; osgi.wiring.bundle="org.bouncycastle.bcpkix"
+  org.bouncycastle.bcpkix [osgi.identity; type="osgi.bundle"; version:Version="1.72.0.v20221013-1810"; osgi.identity="org.bouncycastle.bcpkix"]
+    import: (&(osgi.wiring.package=org.bouncycastle.asn1)(&(version>=1.72.0)(!(version>=1.73.0))))
+     |
+    export: osgi.wiring.package: org.bouncycastle.asn1
+  bcprov [osgi.identity; type="osgi.bundle"; version:Version="1.72.0"; osgi.identity="bcprov"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY com.yattasolutions.codegen.oaw.ui 4 0 2024-09-01 08:35:16.602
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.yattasolutions.codegen.oaw.ui [751]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtend.typesystem.uml2.ui; bundle-version="[1.0.1,2.3.0)"
+    -> Bundle-SymbolicName: org.eclipse.xtend.typesystem.uml2.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+       org.eclipse.xtend.typesystem.uml2.ui [941]
+         Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+           -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+              org.eclipse.xtend.shared.ui [937]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui; bundle-version="[1.0.1,2.3.0)"
+    -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY com.yattasolutions.xpandpp.ui 4 0 2024-09-01 08:35:16.623
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.yattasolutions.xpandpp.ui [806]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui; bundle-version="[1.0.1,2.3.0)"
+    -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+       org.eclipse.xtend.shared.ui [937]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.xpand.ui; bundle-version="[1.0.1,2.3.0)"
+    -> Bundle-SymbolicName: org.eclipse.xpand.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+       org.eclipse.xpand.ui [933]
+         Unresolved requirement: Require-Bundle: org.eclipse.xtend.ui
+           -> Bundle-SymbolicName: org.eclipse.xtend.ui; bundle-version="2.2.0.v201605260315"; singleton:="true"
+              org.eclipse.xtend.ui [942]
+                Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+                  -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+           -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xpand.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xpand.ui"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xpand.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xpand.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xpand.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xpand.ui"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.xpand.ui 4 0 2024-09-01 08:35:16.635
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xpand.ui [933]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtend.ui
+    -> Bundle-SymbolicName: org.eclipse.xtend.ui; bundle-version="2.2.0.v201605260315"; singleton:="true"
+       org.eclipse.xtend.ui [942]
+         Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+           -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+              org.eclipse.xtend.shared.ui [937]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+    -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xpand.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xpand.ui"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xpand.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xpand.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xpand.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xpand.ui"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.xtend.check.ui 4 0 2024-09-01 08:35:16.645
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtend.check.ui [935]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtend.ui
+    -> Bundle-SymbolicName: org.eclipse.xtend.ui; bundle-version="2.2.0.v201605260315"; singleton:="true"
+       org.eclipse.xtend.ui [942]
+         Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+           -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+              org.eclipse.xtend.shared.ui [937]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+    -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.xtend.shared.ui 4 0 2024-09-01 08:35:16.652
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtend.shared.ui [937]
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.xtend.typesystem.emf.ui 4 0 2024-09-01 08:35:16.665
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtend.typesystem.emf.ui [939]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+    -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+       org.eclipse.xtend.shared.ui [937]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.xtend.typesystem.uml2.ui 4 0 2024-09-01 08:35:16.676
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtend.typesystem.uml2.ui [941]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+    -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+       org.eclipse.xtend.shared.ui [937]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.xtend.ui 4 0 2024-09-01 08:35:16.689
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtend.ui [942]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+    -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+       org.eclipse.xtend.shared.ui [937]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.e4.ui.css.swt.theme 4 0 2024-09-01 08:35:20.814
+!MESSAGE /css/gef_dark.css
+!STACK 0
+java.io.FileNotFoundException: /css/gef_dark.css
+	at org.eclipse.osgi.storage.url.bundleentry.Handler.findBundleEntry(Handler.java:55)
+	at org.eclipse.osgi.storage.url.BundleResourceHandler.openConnection(BundleResourceHandler.java:182)
+	at java.base/java.net.URL.openConnection(URL.java:1094)
+	at org.eclipse.osgi.storage.url.BundleURLConverter.resolve(BundleURLConverter.java:55)
+	at org.eclipse.core.runtime.FileLocator.resolve(FileLocator.java:288)
+	at org.eclipse.core.internal.runtime.PlatformURLConverter.resolve(PlatformURLConverter.java:53)
+	at org.eclipse.core.runtime.FileLocator.resolve(FileLocator.java:288)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.setTheme(ThemeEngine.java:468)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.setTheme(ThemeEngine.java:436)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.setTheme(ThemeEngine.java:428)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.restore(ThemeEngine.java:624)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.setCSSTheme(PartRenderingEngine.java:1417)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.initializeStyling(PartRenderingEngine.java:1324)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1050)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:643)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:550)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:171)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.jface 2 0 2024-09-01 08:35:21.005
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-09-01 08:35:21.005
+!MESSAGE A conflict occurred for COMMAND+SHIFT+T:
+Binding(COMMAND+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(COMMAND+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-09-01 08:35:21.006
+!MESSAGE A conflict occurred for ALT+COMMAND+R:
+Binding(ALT+COMMAND+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.ui.edit.rename"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,cocoa,system)
+Binding(ALT+COMMAND+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.edit.text.java.rename.element"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,cocoa,system)
+
+!ENTRY org.eclipse.jface 2 0 2024-09-01 08:37:21.620
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-09-01 08:37:21.620
+!MESSAGE A conflict occurred for COMMAND+SHIFT+C:
+Binding(COMMAND+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(COMMAND+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		WorkbenchHandlerServiceHandler("org.springframework.tooling.boot.ls.ToggleComment"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.ui 2 2 2024-09-01 08:37:43.127
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.eclipse.core.jobs 4 2 2024-09-01 08:52:39.258
+!MESSAGE An internal error occurred during: "Check server availability".
+!STACK 0
+java.lang.RuntimeException: The plugin could not be started. Please restart Eclipse.
+	at com.yattasolutions.platform.marketplace.client.MarketplaceClientPlugin.getDefault(MarketplaceClientPlugin.java:245)
+	at com.yattasolutions.platform.marketplace.client.account.CheckServerAvailabilityJob.run(CheckServerAvailabilityJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2024-10-14 11:01:50.431 -----------------------------------------------
+eclipse.buildId=4.17.2.202301310704
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=cocoa, NL=en_IN
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4 -keyring /Users/Shalini/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch aarch64 -product org.springframework.boot.ide.branding.sts4 -keyring /Users/Shalini/.eclipse_keyring
+
+!ENTRY org.springframework.ide.eclipse.boot.dash.cf 4 0 2024-10-14 11:01:51.259
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.boot.dash.cf [544]
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.boot.dash.cf [osgi.identity; type="osgi.bundle"; version:Version="4.17.2.202301310704"; osgi.identity="org.springframework.ide.eclipse.boot.dash.cf"; singleton:="true"] because it is exposed to package 'org.bouncycastle.asn1' from resources org.bouncycastle.bcprov [osgi.identity; type="osgi.bundle"; version:Version="1.72.0.v20221013-1810"; osgi.identity="org.bouncycastle.bcprov"] and bcprov [osgi.identity; type="osgi.bundle"; version:Version="1.72.0"; osgi.identity="bcprov"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.boot.dash.cf [osgi.identity; type="osgi.bundle"; version:Version="4.17.2.202301310704"; osgi.identity="org.springframework.ide.eclipse.boot.dash.cf"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.bouncycastle.bcprov)(bundle-version>=1.59.0))
+     |
+    provide: osgi.wiring.bundle: org.bouncycastle.bcprov
+  org.bouncycastle.bcprov [osgi.identity; type="osgi.bundle"; version:Version="1.72.0.v20221013-1810"; osgi.identity="org.bouncycastle.bcprov"]
+
+Chain 2:
+  org.springframework.ide.eclipse.boot.dash.cf [osgi.identity; type="osgi.bundle"; version:Version="4.17.2.202301310704"; osgi.identity="org.springframework.ide.eclipse.boot.dash.cf"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.bouncycastle.bcpkix)(bundle-version>=1.59.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.72.0.v20221013-1810"; osgi.wiring.bundle="org.bouncycastle.bcpkix"
+  org.bouncycastle.bcpkix [osgi.identity; type="osgi.bundle"; version:Version="1.72.0.v20221013-1810"; osgi.identity="org.bouncycastle.bcpkix"]
+    import: (&(osgi.wiring.package=org.bouncycastle.asn1)(&(version>=1.72.0)(!(version>=1.73.0))))
+     |
+    export: osgi.wiring.package: org.bouncycastle.asn1
+  bcprov [osgi.identity; type="osgi.bundle"; version:Version="1.72.0"; osgi.identity="bcprov"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY com.yattasolutions.codegen.oaw.ui 4 0 2024-10-14 11:01:51.284
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.yattasolutions.codegen.oaw.ui [751]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtend.typesystem.uml2.ui; bundle-version="[1.0.1,2.3.0)"
+    -> Bundle-SymbolicName: org.eclipse.xtend.typesystem.uml2.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+       org.eclipse.xtend.typesystem.uml2.ui [941]
+         Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+           -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+              org.eclipse.xtend.shared.ui [937]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui; bundle-version="[1.0.1,2.3.0)"
+    -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY com.yattasolutions.xpandpp.ui 4 0 2024-10-14 11:01:51.315
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.yattasolutions.xpandpp.ui [806]
+  Unresolved requirement: Require-Bundle: org.eclipse.xpand.ui; bundle-version="[1.0.1,2.3.0)"
+    -> Bundle-SymbolicName: org.eclipse.xpand.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+       org.eclipse.xpand.ui [933]
+         Unresolved requirement: Require-Bundle: org.eclipse.xtend.ui
+           -> Bundle-SymbolicName: org.eclipse.xtend.ui; bundle-version="2.2.0.v201605260315"; singleton:="true"
+              org.eclipse.xtend.ui [942]
+                Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+                  -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+                     org.eclipse.xtend.shared.ui [937]
+                       No resolution report for the bundle.         Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+           -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui; bundle-version="[1.0.1,2.3.0)"
+    -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xpand.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xpand.ui"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xpand.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xpand.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xpand.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xpand.ui"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.xpand.ui 4 0 2024-10-14 11:01:51.331
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xpand.ui [933]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtend.ui
+    -> Bundle-SymbolicName: org.eclipse.xtend.ui; bundle-version="2.2.0.v201605260315"; singleton:="true"
+       org.eclipse.xtend.ui [942]
+         Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+           -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+              org.eclipse.xtend.shared.ui [937]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+    -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xpand.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xpand.ui"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xpand.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xpand.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xpand.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xpand.ui"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.xtend.check.ui 4 0 2024-10-14 11:01:51.343
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtend.check.ui [935]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+    -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+       org.eclipse.xtend.shared.ui [937]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.xtend.ui
+    -> Bundle-SymbolicName: org.eclipse.xtend.ui; bundle-version="2.2.0.v201605260315"; singleton:="true"
+       org.eclipse.xtend.ui [942]
+         Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+           -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.xtend.shared.ui 4 0 2024-10-14 11:01:51.355
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtend.shared.ui [937]
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.xtend.typesystem.emf.ui 4 0 2024-10-14 11:01:51.369
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtend.typesystem.emf.ui [939]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+    -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+       org.eclipse.xtend.shared.ui [937]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.xtend.typesystem.uml2.ui 4 0 2024-10-14 11:01:51.385
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtend.typesystem.uml2.ui [941]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+    -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+       org.eclipse.xtend.shared.ui [937]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.xtend.ui 4 0 2024-10-14 11:01:51.396
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtend.ui [942]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtend.shared.ui
+    -> Bundle-SymbolicName: org.eclipse.xtend.shared.ui; bundle-version="2.2.0.yatta-patch-201910040908"; singleton:="true"
+       org.eclipse.xtend.shared.ui [937]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="72.1.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xtend.shared.ui [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.yatta-patch-201910040908"; osgi.identity="org.eclipse.xtend.shared.ui"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.e4.ui.css.swt.theme 4 0 2024-10-14 11:01:55.810
+!MESSAGE /css/gef_dark.css
+!STACK 0
+java.io.FileNotFoundException: /css/gef_dark.css
+	at org.eclipse.osgi.storage.url.bundleentry.Handler.findBundleEntry(Handler.java:55)
+	at org.eclipse.osgi.storage.url.BundleResourceHandler.openConnection(BundleResourceHandler.java:182)
+	at java.base/java.net.URL.openConnection(URL.java:1094)
+	at org.eclipse.osgi.storage.url.BundleURLConverter.resolve(BundleURLConverter.java:55)
+	at org.eclipse.core.runtime.FileLocator.resolve(FileLocator.java:288)
+	at org.eclipse.core.internal.runtime.PlatformURLConverter.resolve(PlatformURLConverter.java:53)
+	at org.eclipse.core.runtime.FileLocator.resolve(FileLocator.java:288)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.setTheme(ThemeEngine.java:468)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.setTheme(ThemeEngine.java:436)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.setTheme(ThemeEngine.java:428)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.restore(ThemeEngine.java:624)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.setCSSTheme(PartRenderingEngine.java:1417)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.initializeStyling(PartRenderingEngine.java:1324)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1050)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:643)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:550)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:171)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.jface 2 0 2024-10-14 11:01:55.933
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-10-14 11:01:55.933
+!MESSAGE A conflict occurred for COMMAND+SHIFT+T:
+Binding(COMMAND+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(COMMAND+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-10-14 11:01:55.933
+!MESSAGE A conflict occurred for ALT+COMMAND+R:
+Binding(ALT+COMMAND+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.ui.edit.rename"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,cocoa,system)
+Binding(ALT+COMMAND+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.edit.text.java.rename.element"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,cocoa,system)
+
+!ENTRY org.eclipse.jface 2 0 2024-10-14 11:01:59.258
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-10-14 11:01:59.258
+!MESSAGE A conflict occurred for COMMAND+SHIFT+C:
+Binding(COMMAND+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(COMMAND+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		WorkbenchHandlerServiceHandler("org.springframework.tooling.boot.ls.ToggleComment"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.egit.core 4 0 2024-10-14 11:01:59.369
+!MESSAGE Remove repository mapping of Git mapped resource for which project or mapped git repository has disappeared: 'RepositoryMapping[<empty> -> '../.git', absolute path: '/Users/Shalini/Desktop/SynechronMSAug2024Workshop/ZipkinTracing/distributed-tracing/.git' ]'
+!STACK 0
+java.io.FileNotFoundException: 
+	at org.eclipse.egit.core.project.GitProjectData.logAndUnmapGoneMappedResource(GitProjectData.java:751)
+	at org.eclipse.egit.core.project.GitProjectData.map(GitProjectData.java:714)
+	at org.eclipse.egit.core.project.GitProjectData.remapAll(GitProjectData.java:678)
+	at org.eclipse.egit.core.project.GitProjectData.load(GitProjectData.java:661)
+	at org.eclipse.egit.core.project.GitProjectData.get(GitProjectData.java:217)
+	at org.eclipse.egit.core.project.RepositoryMapping.getProjectData(RepositoryMapping.java:335)
+	at org.eclipse.egit.core.project.RepositoryMapping.findMapping(RepositoryMapping.java:356)
+	at org.eclipse.egit.core.project.RepositoryMapping.getMapping(RepositoryMapping.java:296)
+	at org.eclipse.egit.core.internal.util.ResourceUtil.getRepository(ResourceUtil.java:708)
+	at org.eclipse.egit.core.internal.info.GitItemStateFactory.getIndexDiffDataOrNull(GitItemStateFactory.java:106)
+	at org.eclipse.egit.ui.internal.decorators.GitLightweightDecorator.decorateResource(GitLightweightDecorator.java:194)
+	at org.eclipse.egit.ui.internal.decorators.GitLightweightDecorator.decorate(GitLightweightDecorator.java:172)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:253)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:105)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:360)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:346)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.queue(DecorationScheduler.java:419)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:397)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.core 4 0 2024-10-14 11:01:59.379
+!MESSAGE Remove repository mapping of Git mapped resource for which project or mapped git repository has disappeared: 'RepositoryMapping[<empty> -> '../.git', absolute path: '/Users/Shalini/Desktop/SynechronMSAug2024Workshop/ZipkinTracing/distributed-tracing/.git' ]'
+!STACK 0
+java.io.FileNotFoundException: 
+	at org.eclipse.egit.core.project.GitProjectData.logAndUnmapGoneMappedResource(GitProjectData.java:751)
+	at org.eclipse.egit.core.project.GitProjectData.map(GitProjectData.java:714)
+	at org.eclipse.egit.core.project.GitProjectData.remapAll(GitProjectData.java:678)
+	at org.eclipse.egit.core.project.GitProjectData.load(GitProjectData.java:661)
+	at org.eclipse.egit.core.project.GitProjectData.get(GitProjectData.java:217)
+	at org.eclipse.egit.core.project.RepositoryMapping.getProjectData(RepositoryMapping.java:335)
+	at org.eclipse.egit.core.project.RepositoryMapping.findMapping(RepositoryMapping.java:356)
+	at org.eclipse.egit.core.project.RepositoryMapping.getMapping(RepositoryMapping.java:296)
+	at org.eclipse.egit.core.internal.util.ResourceUtil.getRepository(ResourceUtil.java:708)
+	at org.eclipse.egit.core.internal.info.GitItemStateFactory.getIndexDiffDataOrNull(GitItemStateFactory.java:106)
+	at org.eclipse.egit.ui.internal.decorators.GitLightweightDecorator.decorateResource(GitLightweightDecorator.java:194)
+	at org.eclipse.egit.ui.internal.decorators.GitLightweightDecorator.decorate(GitLightweightDecorator.java:172)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:253)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:105)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:360)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:346)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.queue(DecorationScheduler.java:419)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:397)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.core 4 0 2024-10-14 11:01:59.393
+!MESSAGE Remove repository mapping of Git mapped resource for which project or mapped git repository has disappeared: 'RepositoryMapping[<empty> -> '../.git', absolute path: '/Users/Shalini/Desktop/SynechronMSAug2024Workshop/ZipkinTracing/distributed-tracing/.git' ]'
+!STACK 0
+java.io.FileNotFoundException: 
+	at org.eclipse.egit.core.project.GitProjectData.logAndUnmapGoneMappedResource(GitProjectData.java:751)
+	at org.eclipse.egit.core.project.GitProjectData.map(GitProjectData.java:714)
+	at org.eclipse.egit.core.project.GitProjectData.remapAll(GitProjectData.java:678)
+	at org.eclipse.egit.core.project.GitProjectData.load(GitProjectData.java:661)
+	at org.eclipse.egit.core.project.GitProjectData.get(GitProjectData.java:217)
+	at org.eclipse.egit.core.project.RepositoryMapping.getProjectData(RepositoryMapping.java:335)
+	at org.eclipse.egit.core.project.RepositoryMapping.findMapping(RepositoryMapping.java:356)
+	at org.eclipse.egit.core.project.RepositoryMapping.getMapping(RepositoryMapping.java:296)
+	at org.eclipse.egit.core.internal.util.ResourceUtil.getRepository(ResourceUtil.java:708)
+	at org.eclipse.egit.core.internal.info.GitItemStateFactory.getIndexDiffDataOrNull(GitItemStateFactory.java:106)
+	at org.eclipse.egit.ui.internal.decorators.GitLightweightDecorator.decorateResource(GitLightweightDecorator.java:194)
+	at org.eclipse.egit.ui.internal.decorators.GitLightweightDecorator.decorate(GitLightweightDecorator.java:172)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:253)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:105)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:360)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:346)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.queue(DecorationScheduler.java:419)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:397)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY de.yatta.platform.marketplace.licensing.client 2 0 2024-10-14 11:02:01.563
+!MESSAGE Internal Error.
+!STACK 0
+de.yatta.eclipse.launcher.communication.HttpTypedException: HTTP 400
+	at de.yatta.eclipse.launcher.communication.utils.RequestTemplate.handleResponseStatus(RequestTemplate.java:494)
+	at de.yatta.eclipse.launcher.communication.utils.RequestTemplate.handleResponse(RequestTemplate.java:427)
+	at de.yatta.eclipse.launcher.communication.utils.RequestTemplate$TemplateResponseHandler.handleResponse(RequestTemplate.java:587)
+	at org.apache.http.client.fluent.Response.handleResponse(Response.java:91)
+	at de.yatta.eclipse.launcher.communication.utils.RequestTemplate.execute(RequestTemplate.java:200)
+	at de.yatta.platform.marketplace.licensing.client.LicensingClient$1.run(LicensingClient.java:501)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY com.yattasolutions.platform.marketplace.client 4 0 2024-10-14 11:04:53.682
+!MESSAGE Problem retrieving marketplace UUID, an own UUID will be used.
+!STACK 0
+java.lang.RuntimeException: The plugin could not be started. Please restart Eclipse.
+	at com.yattasolutions.platform.marketplace.client.MarketplaceClientPlugin.getDefault(MarketplaceClientPlugin.java:245)
+	at com.yattasolutions.platform.marketplace.client.MarketplaceClient.get(MarketplaceClient.java:33)
+	at de.yatta.platform.marketplace.licensing.client.LicensingClient.getAccountUuid(LicensingClient.java:604)
+	at de.yatta.platform.marketplace.licensing.client.LicensingClient$1.run(LicensingClient.java:510)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 2 2 2024-10-14 11:04:54.125
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: de.yatta.platform.marketplace.licensing.client.LicensingClient$1
