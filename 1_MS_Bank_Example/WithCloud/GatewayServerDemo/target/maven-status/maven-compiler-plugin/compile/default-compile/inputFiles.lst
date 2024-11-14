@@ -1,0 +1,5 @@
+/Users/Shalini/Documents/Citius_backup/spring/springcloud/MSAug_2024/1_MS_Bank_Example/WithCloud/GatewayServerDemo/src/main/java/com/gateway/GatewayServerDemo/GatewayServerDemoApplication.java
+/Users/Shalini/Documents/Citius_backup/spring/springcloud/MSAug_2024/1_MS_Bank_Example/WithCloud/GatewayServerDemo/src/main/java/com/gateway/GatewayServerDemo/controller/FallbackController.java
+/Users/Shalini/Documents/Citius_backup/spring/springcloud/MSAug_2024/1_MS_Bank_Example/WithCloud/GatewayServerDemo/src/main/java/com/gateway/GatewayServerDemo/filters/FilterUtility.java
+/Users/Shalini/Documents/Citius_backup/spring/springcloud/MSAug_2024/1_MS_Bank_Example/WithCloud/GatewayServerDemo/src/main/java/com/gateway/GatewayServerDemo/filters/RequestTraceFilter.java
+/Users/Shalini/Documents/Citius_backup/spring/springcloud/MSAug_2024/1_MS_Bank_Example/WithCloud/GatewayServerDemo/src/main/java/com/gateway/GatewayServerDemo/filters/ResponseTraceFilter.java
