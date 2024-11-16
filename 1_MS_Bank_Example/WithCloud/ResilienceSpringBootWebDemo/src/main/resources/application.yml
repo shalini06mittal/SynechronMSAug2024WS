@@ -1,0 +1,57 @@
+spring:
+  application:
+    name: ResilienceSpringBootWebDemo
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      example:
+        registerHealthIndicator: true
+        failureRateThreshold: 50
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 5s
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowSize: 3
+        slidingWindowType: COUNT_BASED
+        slowCallRateThreshold: 40
+        slowCallDurationThreshold: 2s
+  retry:
+    instances:
+      retryApi:
+        maxAttempts: 5
+        waitDuration: 5s
+    metrics:
+      enabled: true
+  timelimiter:
+    metrics:
+      enabled: true
+    instances:
+      timeLimiterApi:
+        timeoutDuration: 5s
+        cancelRunningFuture: false
+  ratelimiter:
+    instances:
+      rateLimiterApi:
+        timeoutDuration: 5s # max time to wait for rate limiter to permit subsequent requests
+        limitForPeriod: 5 # number of allowed requests during one limit refresh period
+        limitRefreshPeriod: 5s # duration after which the limit is refreshed
+        registerHealthIndicator: true
+        allowHealthIndicatorToFail: true
+
+    metrics:
+      enabled: true
+
+
+
+

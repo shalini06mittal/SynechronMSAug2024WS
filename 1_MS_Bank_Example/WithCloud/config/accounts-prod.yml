@@ -1,0 +1,13 @@
+build:
+  version: "1.0"
+
+accounts:
+  message: "Welcome to EazyBank accounts related prod APIs from GIT - WITH WEBHOOK ACTIVATED"
+  contactDetails:
+    name: "Shalini Mittal - Product Owner"
+    email: "{cipher}20f138b73b3b4cde17ba181aad48043bb33fc68e98cc80d0e706c80147dcf9ebd75b4059b08c035c68397907b5768117"
+  onCallSupport:
+    - (453) 392-4829
+    - (236) 203-0384
+
+msg:
