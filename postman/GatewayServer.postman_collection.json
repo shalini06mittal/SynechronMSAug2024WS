@@ -1,0 +1,315 @@
+{
+	"info": {
+		"_postman_id": "ea8ce0b2-12e3-4db1-8c36-4008fffcabca",
+		"name": "GatewayServer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "674794"
+	},
+	"item": [
+		{
+			"name": "accounts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "/api?mobileNumber=1212121221",
+					"path": [
+						"api"
+					],
+					"query": [
+						{
+							"key": "mobileNumber",
+							"value": "1212121221"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eazybank customer details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "/eazybank/accounts/api/details?mobileNumber=8989898989",
+					"path": [
+						"eazybank",
+						"accounts",
+						"api",
+						"details"
+					],
+					"query": [
+						{
+							"key": "mobileNumber",
+							"value": "8989898989"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eazybank accounts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "/eazybank/accounts/api?mobileNumber=8989898989",
+					"path": [
+						"eazybank",
+						"accounts",
+						"api"
+					],
+					"query": [
+						{
+							"key": "mobileNumber",
+							"value": "8989898989"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eazybank accounts",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "scope",
+							"value": "openid email profile",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "XVdOvGIy3Mqub1hZc98W6AbhXbfNA7X2",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "msoauth",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://localhost:9091/realms/ms-oauth/protocol/openid-connect/token",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "body",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "AccessToken",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Shalini Mittal\",\n  \"email\": \"shalini@gmail.com\",\n  \"mobileNumber\": \"1212121212\",\n  \"accountsDto\": {\n    \"accountNumber\": 3454433243,\n    \"accountType\": \"Savings\",\n    \"branchAddress\": \"123 Mumbai\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "/eazybank/accounts/api",
+					"path": [
+						"eazybank",
+						"accounts",
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accounts eazybank contact-info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "/eazybank/accounts/api/contact-info",
+					"path": [
+						"eazybank",
+						"accounts",
+						"api",
+						"contact-info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Loans eazybank contact-info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "/eazybank/loans/api/contact-info",
+					"path": [
+						"eazybank",
+						"loans",
+						"api",
+						"contact-info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eazybank loans",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "/eazybank/loans/api?mobileNumber=1212121312",
+					"path": [
+						"eazybank",
+						"loans",
+						"api"
+					],
+					"query": [
+						{
+							"key": "mobileNumber",
+							"value": "1212121312"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eazybank loans",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "scope",
+							"value": "openid email profile",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "XVdOvGIy3Mqub1hZc98W6AbhXbfNA7X2",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "msoauth",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://localhost:9091/realms/ms-oauth/protocol/openid-connect/token",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "body",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "AccessToken",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "/eazybank/loans/api?mobileNumber=1212121212",
+					"path": [
+						"eazybank",
+						"loans",
+						"api"
+					],
+					"query": [
+						{
+							"key": "mobileNumber",
+							"value": "1212121212"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eazybank cards",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "/eazybank/cards/api?mobileNumber=8989898989",
+					"path": [
+						"eazybank",
+						"cards",
+						"api"
+					],
+					"query": [
+						{
+							"key": "mobileNumber",
+							"value": "8989898989"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.request.url.protocol=\"http\";",
+					"pm.request.url.host=\"localhost\";",
+					"pm.request.url.port=\"8072\";",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

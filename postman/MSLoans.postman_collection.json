@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "7dc24c2b-cde3-44a5-b323-d6ba51ea1009",
+		"name": "MSLoans",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "674794"
+	},
+	"item": [
+		{
+			"name": "contact",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "/api/contact-info",
+					"path": [
+						"api",
+						"contact-info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Loans",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "/api?mobileNumber=1212121212",
+					"path": [
+						"api"
+					],
+					"query": [
+						{
+							"key": "mobileNumber",
+							"value": "1212121212"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST   Loans",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "/api?mobileNumber=8989898989",
+					"path": [
+						"api"
+					],
+					"query": [
+						{
+							"key": "mobileNumber",
+							"value": "8989898989"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT   Loans",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "/api",
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE   Loans",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "/api?mobileNumber=1212121212",
+					"path": [
+						"api"
+					],
+					"query": [
+						{
+							"key": "mobileNumber",
+							"value": "1212121212"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.request.url.protocol=\"http\";",
+					"pm.request.url.host=\"localhost\";",
+					"pm.request.url.port=\"8090\";",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
